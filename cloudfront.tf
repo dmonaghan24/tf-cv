@@ -53,7 +53,7 @@ resource "aws_cloudfront_distribution" "redirect_distribution" {
   tags = var.common_tags
 }
 
-# Cloudfront distribution for the main S3 site
+# Cloudfront distribution for the main S3 site - HTTPS enforced
 resource "aws_cloudfront_distribution" "main_site_distribution" {
   origin {
     domain_name = aws_s3_bucket.root_bucket.website_endpoint
@@ -62,7 +62,7 @@ resource "aws_cloudfront_distribution" "main_site_distribution" {
     custom_origin_config {
       http_port              = 80
       https_port             = 443
-      origin_protocol_policy = "http-only"
+      origin_protocol_policy = "https-only"
       origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
     }
   }
