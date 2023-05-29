@@ -25,7 +25,7 @@ The repository's main directory structure is organised as follows:
 - **variables.tf:** Defines the input variables used in the Terraform configuration.
 - **terraform.tfvars:** Contains the values for the input variables.
 
-I have also broken down each code block and script files as follows:
+I have also broken down each code block into modules by service and script files as follows:
 
 - **acm.tf**
 - **cloudfornt.tf**
